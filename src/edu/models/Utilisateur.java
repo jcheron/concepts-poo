@@ -10,6 +10,8 @@ public class Utilisateur {
 	private int age;
 	private List<Groupe> groupes;
 	private List<Connexion> connexions;
+	
+	private Preferences prefs;
 
 	/**
 	 * @param login
@@ -18,6 +20,7 @@ public class Utilisateur {
 		this.login = login;
 		connexions=new ArrayList<>();
 		groupes=new ArrayList<>();
+		prefs=Preferences.getDefault();
 	}
 	
 	/**
@@ -58,7 +61,7 @@ public class Utilisateur {
 
 	@Override
 	public String toString() {
-		return login+connexions+groupes;
+		return login+connexions+groupes+prefs;
 	}
 
 
